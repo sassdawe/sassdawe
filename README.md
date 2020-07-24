@@ -1,4 +1,4 @@
-### Hi there 👋
+### Hi there, I'm David, but I listen to Dawe as well 👋
 
 - 🌌 My PowerShell portfolio is on the [PowerShell Gallery](https://www.powershellgallery.com/packages?q=sassdawe)  
 - 🔭 I’m currently working on:
@@ -7,7 +7,9 @@
 - 🌱 I’m currently learning PowerShell, as we all are
 - 💬 My thoughts are published at [kolislab.com](https://kolislab.com)
 - 📫 How to reach me: be creative, you might already know the email domain 😉
-- 😄 Pronouns: He/Him
+- 😄 Pronouns: He/Him/Skills
 - ⚡ Fun fact: my friends call me Skills, but that handler was already taken
 
 Sharing is Caring
+
+Be polite. Be kind. Be respectful. Be helpful. Be curious. Be smart. Be awesome. Bring cookies!
