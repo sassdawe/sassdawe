@@ -13,3 +13,5 @@
 Sharing is Caring
 
 Be polite. Be kind. Be respectful. Be helpful. Be curious. Be smart. Be awesome. Bring cookies!
+
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fsassdawe&countColor=%23263759)
