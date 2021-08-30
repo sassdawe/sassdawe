@@ -7,12 +7,12 @@ $myModulePath = "c:\Users\$((whoami).split('\')[-1])\Publishing\"
 
 $env:psmodulepath = (($env:psmodulepath.Split(';') | Where-Object { -not [system.string]::IsNullOrEmpty($_) } | Sort-Object -Unique ) + $myModulePath) -join ';'
 
-Import-Module Configuration
-Import-Module Terminal-Icons
+Import-Module Configuration -ErrorAction SilentlyContinue
+Import-Module Terminal-Icons -ErrorAction SilentlyContinue
 
-Import-Module posh-git
-Import-Module oh-my-posh
-Set-Theme Paradox
+#Import-Module posh-git
+#Import-Module oh-my-posh
+#Set-Theme Paradox
 
 #region Application Insights
 try {
@@ -21,6 +21,7 @@ catch { $_ }
 #endregion
 
 [System.Net.WebRequest]::DefaultWebProxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials
+# [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 New-Alias ip Invoke-Pester
 function Get-ElevationStatus {
@@ -49,16 +50,19 @@ function Copy-Object {
     )
     $Object.PSObject.Copy()
 }
-Function dbps() {
-    $Global:DebugLog = "$ENV:TEMP\psdebug.log"
+Function Debug-PowerShell() {
+    [CmdletBinding()]
+    [Alias("dbps")]
+    param (
+        [string]$Path = "$ENV:TEMP\psdebu.log"
+    )
+    $Global:DebugLog = $Path
     New-Item $Global:DebugLog -Force -ItemType File
-    Start-Process powershell "Get-Content '$DebugLog' -Wait" -noprofile
+    Start-Process powershell -ArgumentList "-noprofile","-command &{Get-Content '$DebugLog' -Wait}"
 }
-#Write-Host 'dbps' -ForegroundColor Yellow
 function Copy-History() { (Get-History).commandline | clip }
 New-Alias -Name ch -Value 'Copy-History'
 
-#Write-Host "Hey Master Skills!" -ForegroundColor Magenta
 
 if ($AppInsightClient) {
     $AppInsightClient.TrackEvent("PowerShell started on $(hostname) by $(whoami), $(IsElevated)")
@@ -148,3 +152,11 @@ $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
     Import-Module "$ChocolateyProfile"
 }
+
+Set-PSReadLineOption -AddToHistoryHandler {
+    param([string]$line)
+
+    $sensitive = "password|asplaintext|token|key|secret"
+    return ($line -notmatch $sensitive)
+}
+Set-PSReadLineOption -PredictionSource History
