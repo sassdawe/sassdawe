@@ -1,0 +1,22 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#9cbd67",
+        "activityBar.activeBorder": "#447a9c",
+        "activityBar.background": "#9cbd67",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#447a9c",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "statusBar.background": "#84a849",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#68843a",
+        "titleBar.activeBackground": "#84a849",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#84a84999",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#84a849",
+    "github.copilot.advanced": {
+        "enabled": false
+    }
+}
