@@ -63,6 +63,24 @@ Function Debug-PowerShell() {
 function Copy-History() { (Get-History).commandline | clip }
 New-Alias -Name ch -Value 'Copy-History'
 
+function clear-url {
+    [cmdletbinding()]
+    [alias('cc')]
+    param(
+        [string]$url = @(Get-Clipboard)[0]
+    )
+    $url = $url.Trim()
+    Write-Verbose "original url: `'$url`'"
+    if ( ([uri]$url).Query ) {
+        Write-Verbose "removing: `'$(([uri]$url).Query)`'"
+        ([uri]$url).AbsoluteUri.replace(([uri]$url).Query, '').trim() | clip
+    }
+    elseif ( ([uri]$url).Fragment ) {
+        Write-Verbose "removing: `'$(([uri]$url).Fragment)`'"
+        ([uri]$url).AbsoluteUri.replace(([uri]$url).Fragment, '').trim() | clip
+    }
+    Write-Verbose "clipboard updated with `'$((Get-Clipboard)[0])`'"
+}
 
 if ($AppInsightClient) {
     $AppInsightClient.TrackEvent("PowerShell started on $(hostname) by $(whoami), $(IsElevated)")
