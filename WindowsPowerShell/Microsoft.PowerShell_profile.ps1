@@ -1,5 +1,14 @@
 $ProgressPreference = 'SilentlyContinue'
+$ErrorActionPreference = 'Stop'
+Set-StrictMode -Version 'Latest'
+
 $PSDefaultParameterValues["Out-Default:OutVariable"] = "__"
+#region from https://twitter.com/cl/status/1446446992633237508?s=20
+$PSDefaultParameterValues["Install-Module:Scope"] = "CurrentUser"
+$PSDefaultParameterValues["Install-Module:Repository"] = "PSGallery"
+$PSDefaultParameterValues["Install-Package:SkipDependencies"] = $true
+$PSDefaultParameterValues["Install-Package:Confirm"] = $false
+#endregion
 
 $hosts = "C:\Windows\System32\drivers\etc\hosts"
 
@@ -178,3 +187,35 @@ Set-PSReadLineOption -AddToHistoryHandler {
     return ($line -notmatch $sensitive)
 }
 Set-PSReadLineOption -PredictionSource History
+
+function Get-CommitMessage {
+    <#
+    .SYNOPSIS
+        Get-CommitMessage
+    .DESCRIPTION
+        Get-CommitMessage fill get a random funy commit message
+    .OUTPUTS
+    .EXAMPLE
+    .NOTES
+    .LINK
+        https://twitter.com/viorelciucu/status/1447170362584797191?s=20
+    #>
+    [CmdletBinding()]
+    param (
+    )
+
+    begin {
+    }
+
+    process {
+        $uri = 'http://whatthecommit.com/index.txt'
+        $randomcommit = Invoke-RestMethod -Uri $uri -Method Get
+        $randomcommit.Trim()
+    }
+
+    end {
+    }
+}
+
+# https://twitter.com/IISResetMe/status/1446477373138952196?s=20
+function Get-Syntax { (Get-Command @args -Syntax) -split'(?= \[*-)' }
