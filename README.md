@@ -10,6 +10,7 @@
 - 📫 How to reach me: be creative, you might already know the email domain 😉
 - 😄 Pronouns: He/Him/Skills
 - ⚡ Fun fact: my friends call me Skills, but that handler was already taken
+- 🐘 <a rel="me" href="https://infosec.exchange/@sassdawe">infosec.exchange/@sassdawe</a>
 
 Sharing is Caring
 
