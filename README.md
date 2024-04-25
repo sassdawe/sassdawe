@@ -2,15 +2,14 @@
 
 - 🌌 My PowerShell portfolio is on the [PowerShell Gallery](https://www.powershellgallery.com/packages?q=sassdawe)  
 - 🔭 I’m currently working on:
-    - [DefenderASR](https://github.com/sassdawe/HardenWindows/tree/main/WindowsDefender/DefenderASR) as a pet project
-    - [SPSFarmReport](https://github.com/sassdawe/SPSFarmReport), the goal here is to turn the original scripts into real publishable PowerShell modules
-- 🛠 I'm a SharePoint Server person which means `.NET Framework 4.8` and **SharePoint Designer**
-- 🌱 I’m currently learning PowerShell, as we all are
+    - [AzColorizer](https://github.com/sassdawe/AzColorizerPreview) a browser extension which can bring colors to your Azure portal experience
+    - [PnP Sharing Settings as Code](https://github.com/sassdawe/pnp-sharing-settings-action) a GitHub Action available in the [Marketplace](https://github.com/marketplace/actions/pnp-powershell-sharing-settings-as-code)
+- 🛠 I'm a SharePoint Server person which means `.NET Framework 4.8` and **SharePoint Designer** \o/
+- 🌱 I’m currently still learning **PowerShell**, as we all are
 - 💬 My thoughts are published at [kolislab.com](https://kolislab.com)
 - 📫 How to reach me: be creative, you might already know the email domain 😉
-- 😄 Pronouns: He/Him/Skills
+- 😄 Pronouns: He/Him/His/Skills
 - ⚡ Fun fact: my friends call me Skills, but that handler was already taken
-- 🐘 <a rel="me" href="https://infosec.exchange/@sassdawe">infosec.exchange/@sassdawe</a>
 
 Sharing is Caring
 
